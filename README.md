@@ -1,11 +1,3 @@
-# Nerio Store
-
-Store web responsive avec interface sombre et effets Liquid Glass.
-
-## Démarrer
-
-Héberge le dossier sur un serveur web (Vercel, Netlify, GitHub Pages avec un serveur statique, etc.). Le site lit `apps.json` avec `fetch`, donc il doit être servi via HTTP(S), pas ouvert directement en `file://`.
-
 ## Ajouter une application
 
 1. Crée un dossier dans `apps/`, par exemple `apps/mon-app/`.
