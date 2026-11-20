@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080a10">
+<meta name="description" content="Nerio Store — votre catalogue d'applications.">
+<title>Nerio Store</title>
+<style>
+:root{color-scheme:dark;--bg:#080a10;--panel:rgba(22,26,37,.68);--panel2:rgba(255,255,255,.055);--line:rgba(255,255,255,.105);--text:#f5f7ff;--muted:#929bad;--blue:#3989ff;--blue2:#70b7ff;--radius:25px;--shadow:0 22px 70px rgba(0,0,0,.38)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 78% 4%,rgba(31,105,220,.13),transparent 32%),radial-gradient(ellipse at 12% 42%,rgba(24,72,150,.09),transparent 34%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;letter-spacing:-.02em;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(125deg,transparent 20%,rgba(255,255,255,.012),transparent 60%)}
+button,input{font:inherit}button{color:inherit;cursor:pointer}a{color:inherit}
+.shell{width:min(1120px,calc(100% - 48px));margin:auto;padding:38px 0 110px}
+.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:44px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(145deg,#62b4ff,#1764db 70%);display:grid;place-items:center;box-shadow:0 8px 28px #1764db55,inset 0 1px 1px #ffffff88}
+.brand-mark svg{width:21px}.brand-name{font-size:23px;font-weight:760;letter-spacing:-1.1px}.brand-name span{color:#55a5ff}
+.top-actions{display:flex;align-items:center;gap:10px}
+.glass{background:linear-gradient(145deg,rgba(255,255,255,.095),rgba(255,255,255,.025) 48%,rgba(255,255,255,.045));border:1px solid var(--line);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 34px rgba(0,0,0,.22);backdrop-filter:blur(28px) saturate(155%);-webkit-backdrop-filter:blur(28px) saturate(155%)}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(67,137,255,.12);border:1px solid rgba(87,155,255,.22);color:#70b7ff;transition:.25s}
+.icon-btn:hover{transform:translateY(-2px);background:rgba(67,137,255,.2)}
+.icon-btn svg{width:19px}
+.hero{position:relative;overflow:hidden;border-radius:32px;padding:34px 36px 32px;margin-bottom:38px;min-height:198px}
+.hero:before{content:"";position:absolute;width:340px;height:260px;right:5%;top:-110px;background:radial-gradient(ellipse,rgba(41,132,255,.26),transparent 68%);filter:blur(10px);pointer-events:none}
+.eyebrow{font-size:11px;font-weight:750;letter-spacing:.17em;text-transform:uppercase;color:#80baff;margin-bottom:13px}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.04;letter-spacing:-2.2px;margin:0 0 12px;font-weight:760}
+h1 span{background:linear-gradient(90deg,#5caeff,#3181ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{margin:0;color:#aab3c3;font-size:15px;line-height:1.55;max-width:470px}
+.hero-orb{position:absolute;right:9%;top:26px;width:142px;height:142px;border-radius:50%;background:radial-gradient(circle at 32% 25%,rgba(255,255,255,.28),transparent 20%),radial-gradient(circle at 45% 45%,rgba(46,132,255,.35),rgba(17,68,145,.08) 62%,transparent 70%);border:1px solid rgba(117,174,255,.17);box-shadow:inset 0 0 30px rgba(89,157,255,.12),0 0 65px rgba(32,112,255,.13);filter:blur(.2px)}
+.hero-orb:after{content:"";position:absolute;inset:22px;border:1px solid rgba(156,201,255,.16);border-radius:50%;box-shadow:0 0 30px #348cff25}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:0 0 17px}
+.section-head h2{font-size:21px;letter-spacing:-.7px;margin:0;font-weight:730}
+.section-head p{font-size:13px;color:var(--muted);margin:6px 0 0}
+.count{font-size:12px;color:#9eabc0}
+.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:25px}
+.searchbox{height:46px;display:flex;align-items:center;gap:10px;padding:0 15px;border-radius:15px;flex:1;min-width:0}
+.searchbox svg{width:17px;color:#8d9bb1;flex-shrink:0}.searchbox input{width:100%;border:0;outline:0;background:transparent;color:var(--text);font-size:14px}.searchbox input::placeholder{color:#778195}
+.filter{height:46px;padding:0 16px;border-radius:15px;border:1px solid var(--line);background:rgba(255,255,255,.045);color:#c6cfde;font-size:13px}
+.categories{display:flex;gap:9px;overflow:auto;padding:2px 0 7px;margin-bottom:28px;scrollbar-width:none}.categories::-webkit-scrollbar{display:none}
+.chip{white-space:nowrap;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.075);background:rgba(255,255,255,.045);color:#aeb8ca;font-size:13px;transition:.22s}
+.chip.active,.chip:hover{background:rgba(53,132,255,.17);border-color:rgba(79,153,255,.35);color:#8fc3ff;box-shadow:inset 0 1px rgba(255,255,255,.08)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.app-card{position:relative;min-width:0;padding:17px;border-radius:22px;transition:transform .25s,border-color .25s,background .25s;cursor:pointer;animation:rise .5s both}
+.app-card:hover{transform:translateY(-4px);border-color:rgba(104,171,255,.27);background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.035))}
+.app-top{display:flex;gap:13px;align-items:center;min-width:0}
+.app-icon{width:61px;height:61px;border-radius:17px;object-fit:cover;background:linear-gradient(145deg,#27364e,#111827);flex-shrink:0;border:1px solid rgba(255,255,255,.12);box-shadow:0 7px 18px #0005}
+.app-icon-fallback{display:grid;place-items:center;color:#8fc4ff;font-size:22px;font-weight:750}
+.app-info{min-width:0;flex:1}.app-info h3{font-size:15px;font-weight:700;margin:0 0 5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.app-info p{font-size:12px;color:var(--muted);margin:0}
+.app-desc{font-size:12px;line-height:1.45;color:#9ca8bb;margin:14px 0 15px;min-height:34px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.get-btn{border:1px solid rgba(75,147,255,.24);background:rgba(44,119,240,.14);color:#81baff;border-radius:999px;padding:8px 17px;font-size:12px;font-weight:720;min-width:86px;transition:.2s}
+.get-btn:hover{background:rgba(52,131,255,.25);border-color:rgba(102,171,255,.5)}
+.meta{font-size:11px;color:#7e899c}
+.empty{grid-column:1/-1;text-align:center;padding:62px 20px;border-radius:25px}
+.empty-symbol{width:58px;height:58px;border-radius:19px;margin:0 auto 17px;display:grid;place-items:center;color:#75b7ff;background:rgba(57,137,255,.11);border:1px solid rgba(100,170,255,.18)}
+.empty-symbol svg{width:25px}.empty h3{font-size:18px;margin:0 0 7px}.empty p{font-size:13px;color:var(--muted);margin:0}
+.bottom-nav{position:fixed;z-index:20;bottom:max(14px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(440px,calc(100% - 28px));display:flex;justify-content:space-around;padding:8px;border-radius:23px;background:rgba(21,25,35,.76);border:1px solid rgba(255,255,255,.13);box-shadow:0 18px 55px #0009,inset 0 1px rgba(255,255,255,.12);backdrop-filter:blur(35px) saturate(180%);-webkit-backdrop-filter:blur(35px) saturate(180%)}
+.nav-item{border:0;background:transparent;color:#7f899b;display:flex;align-items:center;justify-content:center;gap:7px;flex:1;padding:10px 9px;border-radius:15px;font-size:11px;transition:.2s}
+.nav-item svg{width:18px;height:18px}.nav-item.active{color:#7eb8ff;background:rgba(52,128,255,.13)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.58);z-index:40;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(9px)}
+.overlay.show{display:flex;animation:fade .2s}
+.detail{width:min(470px,100%);border-radius:29px;padding:24px;position:relative;animation:pop .28s cubic-bezier(.2,.8,.2,1);max-height:min(85vh,760px);overflow:auto}
+.close{position:absolute;right:17px;top:17px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.07);color:#b9c3d3;font-size:20px}
+.detail-head{display:flex;gap:16px;align-items:center;padding:8px 35px 22px 0}.detail-head .app-icon{width:76px;height:76px;border-radius:21px}.detail-head h2{font-size:22px;margin:0 0 6px}.detail-head p{font-size:13px;color:var(--muted);margin:0}
+.detail-desc{font-size:14px;line-height:1.65;color:#b1bbcb;border-top:1px solid var(--line);padding-top:18px;margin:0 0 18px}
+.detail-meta{display:flex;gap:22px;margin:0 0 22px}.detail-meta div{display:flex;flex-direction:column;gap:4px}.detail-meta strong{font-size:13px}.detail-meta span{font-size:11px;color:var(--muted)}
+.primary{width:100%;height:47px;border-radius:15px;border:1px solid rgba(91,163,255,.4);background:linear-gradient(110deg,#2876e8,#429cff);color:white;font-weight:750;font-size:14px;box-shadow:0 8px 25px rgba(35,112,231,.24);transition:.2s;display:flex;align-items:center;justify-content:center;gap:10px}
+.primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.progress-ring{width:19px;height:19px;border-radius:50%;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;animation:spin .8s linear infinite;display:none}
+.primary.loading .progress-ring{display:inline-block}.primary.loading .btn-label{opacity:.9}
+.toast{position:fixed;z-index:60;left:50%;bottom:105px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:11px 16px;border-radius:13px;background:rgba(27,33,46,.92);border:1px solid var(--line);color:#dce7f8;font-size:12px;backdrop-filter:blur(20px);transition:.25s;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:760px){.shell{width:calc(100% - 34px);padding:27px 0 115px}.topbar{margin-bottom:29px}.hero{padding:27px 23px;min-height:178px;border-radius:26px}.hero-orb{right:-28px;top:31px;width:126px;height:126px;opacity:.72}h1{font-size:35px;max-width:280px}.hero p{font-size:13px;max-width:270px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.app-card{padding:13px;border-radius:19px}.app-icon{width:53px;height:53px;border-radius:15px}.app-top{gap:10px}.app-info h3{font-size:13px}.app-info p{font-size:11px}.app-desc{font-size:11px;min-height:32px}.get-btn{padding:8px 14px;min-width:78px}.section-head h2{font-size:19px}}
+@media(max-width:390px){.shell{width:calc(100% - 26px)}.grid{grid-template-columns:1fr}.app-card{padding:15px}.app-desc{min-height:0}.hero-orb{right:-55px;opacity:.55}.brand-name{font-size:21px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Nerio Store, accueil">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6 17V7l12 10V7" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-name">Nerio<span>Store</span></span>
+    </a>
+    <div class="top-actions"><button class="icon-btn" id="profileBtn" aria-label="Profil"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 20c.5-4 3.5-6 8-6s7.5 2 8 6" /></svg></button></div>
+  </header>
+
+  <section class="hero glass">
+    <div class="eyebrow">Découvrir · Installer · Profiter</div>
+    <h1>Votre store.<br><span>Vos applications.</span></h1>
+    <p>Un catalogue soigneusement organisé pour retrouver vos applications au même endroit.</p>
+    <div class="hero-orb" aria-hidden="true"></div>
+  </section>
+
+  <section>
+    <div class="section-head"><div><h2 id="sectionTitle">Explorer le catalogue</h2><p id="sectionSubtitle">Les applications disponibles</p></div><span class="count" id="appCount">0 app</span></div>
+    <div class="toolbar">
+      <label class="searchbox glass"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><input id="searchInput" type="search" placeholder="Rechercher une application…" autocomplete="off"></label>
+      <select class="filter" id="sortSelect" aria-label="Trier"><option value="popular">Récentes</option><option value="name">Nom A–Z</option></select>
+    </div>
+    <div class="categories" id="categories"></div>
+    <div class="grid" id="appGrid"></div>
+  </section>
+</main>
+
+<nav class="bottom-nav" aria-label="Navigation principale">
+  <button class="nav-item active" data-view="home"><svg viewBox="0 0 24 24" fill="none"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Accueil</span></button>
+  <button class="nav-item" data-view="explore"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg><span>Explorer</span></button>
+  <button class="nav-item" data-view="search"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Rechercher</span></button>
+</nav>
+
+<div class="overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-label="Détails de l'application">
+  <article class="detail glass">
+    <button class="close" id="closeDetail" aria-label="Fermer">×</button>
+    <div id="detailContent"></div>
+  </article>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const grid=document.getElementById('appGrid');
+const categoriesEl=document.getElementById('categories');
+const searchInput=document.getElementById('searchInput');
+const overlay=document.getElementById('detailOverlay');
+const detailContent=document.getElementById('detailContent');
+let apps=[],activeCategory='Tout',activeApp=null,activeView='home';
+
+const iconFallback=(name='N')=>`<div class="app-icon app-icon-fallback">${escapeHTML(name.slice(0,1).toUpperCase())}</div>`;
+function escapeHTML(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function appIcon(app,large=false){return app.icon?`<img class="app-icon" src="${escapeHTML(app.icon)}" alt="" onerror="this.outerHTML='${iconFallback((app.name||'N').replace(/'/g,''))}'">`:iconFallback(app.name||'N');}
+function showToast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>el.classList.remove('show'),2300);}
+async function loadApps(){
+  try{const response=await fetch('./apps.json',{cache:'no-store'});if(!response.ok)throw new Error('apps.json introuvable');const data=await response.json();apps=Array.isArray(data)?data:(data.apps||[]);}
+  catch(e){apps=[];console.warn('Impossible de charger apps.json :',e);}
+  renderCategories();renderApps();
+}
+function renderCategories(){
+  const values=['Tout',...new Set(apps.map(a=>a.category).filter(Boolean))];
+  if(!values.includes(activeCategory))activeCategory='Tout';
+  categoriesEl.innerHTML=values.map(c=>`<button class="chip ${c===activeCategory?'active':''}" data-category="${escapeHTML(c)}">${escapeHTML(c)}</button>`).join('');
+  categoriesEl.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{activeCategory=b.dataset.category;renderCategories();renderApps();}));
+}
+function filteredApps(){
+  const q=searchInput.value.trim().toLowerCase();
+  let list=apps.filter(a=>(activeCategory==='Tout'||a.category===activeCategory)&&(!q||[a.name,a.subtitle,a.description,a.category,...(a.tags||[])].join(' ').toLowerCase().includes(q)));
+  if(document.getElementById('sortSelect').value==='name')list.sort((a,b)=>(a.name||'').localeCompare(b.name||'','fr'));
+  else list.sort((a,b)=>(b.updated||'').localeCompare(a.updated||''));
+  return list;
+}
+function renderApps(){
+  const list=filteredApps();
+  document.getElementById('appCount').textContent=`${list.length} app${list.length>1?'s':''}`;
+  document.getElementById('sectionTitle').textContent=activeView==='search'?'Rechercher':'Explorer le catalogue';
+  document.getElementById('sectionSubtitle').textContent=list.length?`${list.length} application${list.length>1?'s':''} disponible${list.length>1?'s':''}`:'Votre catalogue est prêt à être rempli';
+  if(!list.length){
+    const isEmpty=apps.length===0;
+    grid.innerHTML=`<div class="empty glass"><div class="empty-symbol"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M9 7h6M10 17h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>${isEmpty?'Aucune application pour le moment':'Aucun résultat'}</h3><p>${isEmpty?'Les nouvelles applications apparaîtront ici dès que tu les ajouteras au fichier apps.json.':'Essaie un autre terme ou une autre catégorie.'}</p></div>`;
+    return;
+  }
+  grid.innerHTML=list.map((a,i)=>`<article class="app-card glass" data-id="${escapeHTML(a.id)}" style="animation-delay:${Math.min(i*45,300)}ms"><div class="app-top">${appIcon(a)}<div class="app-info"><h3>${escapeHTML(a.name||'Application')}</h3><p>${escapeHTML(a.subtitle||a.category||'Application')}</p></div></div><p class="app-desc">${escapeHTML(a.description||'Découvre cette application dans Nerio Store.')}</p><div class="card-foot"><span class="meta">${escapeHTML(a.version?'v'+a.version:'')}</span><button class="get-btn" data-get="${escapeHTML(a.id)}">Obtenir</button></div></article>`).join('');
+  grid.querySelectorAll('.app-card').forEach(card=>card.addEventListener('click',e=>{if(e.target.closest('[data-get]'))return;openDetails(card.dataset.id);}));
+  grid.querySelectorAll('[data-get]').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();openDetails(btn.dataset.get,true);}));
+}
+function openDetails(id,autoFocus=false){
+  activeApp=apps.find(a=>a.id===id);if(!activeApp)return;
+  const a=activeApp;
+  detailContent.innerHTML=`<div class="detail-head">${appIcon(a)}<div><h2>${escapeHTML(a.name||'Application')}</h2><p>${escapeHTML(a.subtitle||a.category||'Application')}</p></div></div><p class="detail-desc">${escapeHTML(a.description||'Aucune description disponible.')}</p><div class="detail-meta"><div><strong>${escapeHTML(a.version||'—')}</strong><span>Version</span></div><div><strong>${escapeHTML(a.size||'—')}</strong><span>Taille</span></div><div><strong>${escapeHTML(a.category||'—')}</strong><span>Catégorie</span></div></div><button class="primary" id="installBtn"><span class="progress-ring"></span><span class="btn-label">Obtenir</span></button>`;
+  overlay.classList.add('show');document.body.style.overflow='hidden';
+  document.getElementById('installBtn').addEventListener('click',()=>installApp(a));
+  if(autoFocus)document.getElementById('installBtn').focus();
+}
+function closeDetails(){overlay.classList.remove('show');document.body.style.overflow='';activeApp=null;}
+document.getElementById('closeDetail').addEventListener('click',closeDetails);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeDetails();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetails();});
+async function installApp(app){
+  const btn=document.getElementById('installBtn');if(!btn||btn.classList.contains('loading'))return;
+  const label=btn.querySelector('.btn-label');btn.classList.add('loading');label.textContent='Préparation…';btn.disabled=true;
+  try{
+    const folder=`./apps/${encodeURIComponent(app.id)}/`;
+    let target=app.installFile?folder+app.installFile:null;
+    if(!target&&app.installUrl)target=app.installUrl;
+    if(!target)throw new Error('Aucun fichier d’installation défini.');
+    if(target.toLowerCase().endsWith('.txt')){
+      const r=await fetch(target);if(!r.ok)throw new Error('Impossible de lire install.txt');
+      const text=(await r.text()).trim();const match=text.match(/https?:\/\/[^\s"'<>]+/);
+      if(!match)throw new Error('Aucun lien valide trouvé dans install.txt');
+      label.textContent='Ouverture…';await new Promise(r=>setTimeout(r,450));window.location.href=match[0];
+      label.textContent='Lien ouvert';showToast('Ouverture du lien d’installation');
+    }else if(app.manifestUrl){
+      label.textContent='Installation…';await new Promise(r=>setTimeout(r,550));
+      window.location.href=`itms-services://?action=download-manifest&url=${encodeURIComponent(app.manifestUrl)}`;
+      label.textContent='Continuer sur iOS';showToast('Demande transmise à iOS');
+    }else{
+      label.textContent='Téléchargement…';
+      const response=await fetch(target);if(!response.ok)throw new Error('Téléchargement impossible');
+      const blob=await response.blob();const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=(app.fileName||target.split('/').pop()||'application.ipa');document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+      label.textContent='Téléchargé';showToast('Téléchargement terminé');
+    }
+  }catch(err){label.textContent='Obtenir';showToast(err.message||'Une erreur est survenue');}
+  finally{setTimeout(()=>{if(btn.isConnected){btn.classList.remove('loading');btn.disabled=false;if(label.textContent==='Préparation…'||label.textContent==='Téléchargement…')label.textContent='Obtenir';}},900);}
+}
+searchInput.addEventListener('input',renderApps);
+document.getElementById('sortSelect').addEventListener('change',renderApps);
+document.querySelectorAll('.nav-item').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b===btn));
+  activeView=btn.dataset.view;
+  if(activeView==='search'){searchInput.focus();document.querySelector('.toolbar').scrollIntoView({behavior:'smooth',block:'center'});}
+  else if(activeView==='home'){searchInput.value='';activeCategory='Tout';renderCategories();}
+  renderApps();
+}));
+document.getElementById('profileBtn').addEventListener('click',()=>showToast('Espace profil bientôt disponible'));
+loadApps();
+</script>
+</body>
+</html>
