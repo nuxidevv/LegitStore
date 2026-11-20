@@ -1,3 +1,17 @@
 {
-  "apps": []
+  "apps": [
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "subtitle": "Musique",
+      "description": "Titres, playlists et bien plus (Taurus - Redesigned/Premium)",
+      "category": "Musique",
+      "version": "0.60.6",
+      "size": "287,8 Mo",
+      "icon": "https://m.media-amazon.com/images/I/31B2Nyzd8XL.png",
+      "installFile": "install.txt",
+      "updated": "2026-11-09",
+      "tags": ["Musique"]
+    }
+  ]
 }
