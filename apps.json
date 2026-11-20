@@ -12,6 +12,97 @@
       "installFile": "install.txt",
       "updated": "2026-11-09",
       "tags": ["Musique"]
+    },
+    {
+      "id": "Youtube Musique",
+      "name": "Youtube Music",
+      "subtitle": "Musique",
+      "description": "Un monde de musique, pour vous (Modded)",
+      "category": "Musique",
+      "version": "9.46.5",
+      "size": "2870,5 Mo",
+      "icon": "https://play-lh.googleusercontent.com/MyptZXmcCyF59phIWPsNCfHq6zSO_ojEdw_4rMYYWPOGdikSjqeOXcoszBZ053VYpINe5K7ZR9KV1nkFWgxdOw=s0-br30",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Musique"]
+    },
+    {
+      "id": "Instagram",
+      "name": "Instagram",
+      "subtitle": "Photo et vidéo",
+      "description": "Photo et vidéo",
+      "category": "Réseaux sociaux",
+      "version": "7.1",
+      "size": "697,9 Mo",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Photo et vidéo"]
+    },
+    {
+      "id": "X (Twitter)",
+      "name": "X (Twitter)",
+      "subtitle": "Actualités & réseaux sociaux",
+      "description": "Actualités & réseaux sociaux",
+      "category": "Réseaux sociaux",
+      "version": "1.0.1",
+      "size": "736 Mo",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg?utm_source=fr.wikinews.org&utm_campaign=index&utm_content=original",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Actualités", "réseaux sociaux"]
+    },  
+    {
+      "id": "Pinterest",
+      "name": "Pinterest",
+      "subtitle": "Style de vie",
+      "description": "Recette, mode et déco",
+      "category": "Style de vie",
+      "version": "14.45",
+      "size": "415,8 Mo",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPY6ITdxo3ywK_dSKlwlb3Z_Q5wvpaeyi04LVjsYJBTg&s",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Style de vie"]
+    },
+    {
+      "id": "Picsart",
+      "name": "Picsart",
+      "subtitle": "Retouche, collage, floutage",
+      "description": "Retouche, collage, floutage",
+      "category": "Photo et vidéo",
+      "version": "31.1.1",
+      "size": "276,8 Mo",
+      "icon": "https://play-lh.googleusercontent.com/gRheGVxu9Ygc4lIc71bVSgjGNiZ8d-nraBqGFRm1SV-2CsD-byiqzt_8m8y8tJqyLXc",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Photo et vidéo"]
+    },
+    {
+      "id": "Duolingo",
+      "name": "Duolingo",
+      "subtitle": "Anglaid, échecs et plus",
+      "description": "Anglais, échecs et plus",
+      "category": "Éducation",
+      "version": "7.149.1",
+      "size": "489,4 Mo",
+      "icon": "https://store-images.s-microsoft.com/image/apps.37014.9007199267003607.7941b044-3e31-4473-b117-4719728189d2.44278bd9-5ef8-402c-88ce-a647f063a266?h=210",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Éducation"]
+    },
+    {
+      "id": "Citrus",
+      "name": "Citrus",
+      "subtitle": "Photo et vidéo",
+      "description": "Photo et vidéo",
+      "category": "Photo et vidéo",
+      "version": "2.6.2",
+      "size": "154.1 Mo",
+      "icon": "https://play-lh.googleusercontent.com/Yi6Os-AxRnqIPI4Nqtks9tIZjoiarBQmgH8w0JRkwdjDUtMpRK8dGIUaAqvT25k9lJJ170YCT0jDQkjNs1_go5s",
+      "installFile": "install.txt",
+      "updated": "--",
+      "tags": ["Photo et vidéo"]
     }
   ]
 }
